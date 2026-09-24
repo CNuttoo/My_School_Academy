@@ -1,0 +1,43 @@
+{
+  "name": "school-management-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=22.22.3 <23",
+    "npm": ">=10"
+  },
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve --port 4201",
+    "build": "ng build",
+    "build:dev": "ng build --configuration development",
+    "test": "ng test --watch=false"
+  },
+  "dependencies": {
+    "@angular/animations": "~22.2.0",
+    "@angular/common": "~22.2.0",
+    "@angular/compiler": "~22.2.0",
+    "@angular/core": "~22.2.0",
+    "@angular/forms": "~22.2.0",
+    "@angular/platform-browser": "~22.2.0",
+    "@angular/platform-browser-dynamic": "~22.2.0",
+    "@angular/router": "~22.2.0",
+    "rxjs": "~7.8.1",
+    "tslib": "^2.5.0",
+    "zone.js": "~0.15.1"
+  },
+  "devDependencies": {
+    "@angular/build": "^22.2.0",
+    "@angular/cli": "~22.2.0",
+    "@angular/compiler-cli": "~22.2.0",
+    "@types/jasmine": "~4.3.1",
+    "istanbul-lib-instrument": "^6.0.3",
+    "jasmine-core": "~4.5.0",
+    "karma": "~6.4.1",
+    "karma-chrome-launcher": "~3.1.1",
+    "karma-coverage": "~2.2.0",
+    "karma-jasmine": "~5.1.0",
+    "karma-jasmine-html-reporter": "~2.0.0",
+    "typescript": "~6.0.3"
+  }
+}

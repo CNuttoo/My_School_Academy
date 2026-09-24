@@ -1,0 +1,5 @@
+<div class="table-wrap"><table><thead><tr><th>Student</th><th>ID</th><th>Class</th><th>Guardian</th><th>Status</th><th><span class="sr-only">Actions</span></th></tr></thead><tbody>@for (student of students; track trackById($index, student)) {
+<tr><td><a class="student" [routerLink]="[student.id]"><span class="avatar">{{ initials(student) }}</span><span><strong>{{ student.firstName }} {{ student.lastName }}</strong><small>{{ student.email }}</small></span></a></td><td>{{ student.studentNumber }}</td><td>{{ student.grade }} · {{ student.section }}</td><td>{{ student.guardianName }}</td><td><span class="status-pill" [class.status-pill--inactive]="student.status==='Inactive'">{{ student.status }}</span></td><td><a class="action" [routerLink]="[student.id,'edit']" aria-label="Edit student">•••</a></td></tr>
+}</tbody></table>@if (students.length===0) {
+<p class="empty">No students match your filters.</p>
+}</div>

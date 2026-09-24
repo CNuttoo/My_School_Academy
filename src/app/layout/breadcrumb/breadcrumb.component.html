@@ -1,0 +1,3 @@
+<nav class="breadcrumb" aria-label="Breadcrumb"><a routerLink="/dashboard">Home</a>@for (item of breadcrumbs$ | async; track item) {
+<span>/</span><a [routerLink]="item.url">{{ item.label }}</a>
+}</nav>

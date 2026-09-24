@@ -1,0 +1,8 @@
+<aside class="sidebar" [class.sidebar--open]="open">
+  <a class="brand" routerLink="/dashboard" (click)="navigate.emit()"><span class="brand__mark">N</span><span><strong>Northstar</strong><small>School portal</small></span></a>
+  <p class="nav-label">Workspace</p>
+  <nav aria-label="Primary navigation">@for (item of items; track item) {
+    <a class="nav-item" [routerLink]="item.route" routerLinkActive="nav-item--active" (click)="navigate.emit()"><span class="nav-item__icon" aria-hidden="true">{{ item.label.slice(0, 1) }}</span><span>{{ item.label }}</span></a>
+  }</nav>
+  <div class="school-year"><span class="school-year__dot"></span><div><small>Academic year</small><strong>2026–2027</strong></div></div>
+</aside>

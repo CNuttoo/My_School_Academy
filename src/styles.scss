@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap');
+
+:root { --ink-950:#10263d; --ink-800:#263d52; --ink-600:#607487; --ink-400:#94a4b3; --line:#dfe6eb; --canvas:#f4f7f8; --surface:#fff; --brand:#1f6f78; --brand-dark:#19324d; --brand-soft:#e0f0ef; --accent:#e4ad42; --danger:#b94949; --success:#2f8061; --shadow:0 10px 35px rgba(17,43,65,.08); --radius:16px; }
+* { box-sizing: border-box; }
+html, body { min-height: 100%; }
+body { margin:0; background:var(--canvas); color:var(--ink-950); font-family:'DM Sans',Arial,sans-serif; -webkit-font-smoothing:antialiased; }
+button,input,select { font:inherit; } button,a { -webkit-tap-highlight-color:transparent; } a { color:inherit; }
+h1,h2,h3,p { margin-top:0; } h1,h2,h3 { font-family:'Manrope','DM Sans',sans-serif; }
+.page-heading { display:flex; align-items:flex-start; justify-content:space-between; gap:24px; margin-bottom:24px; }
+.page-heading h1 { margin-bottom:6px; font-size:clamp(1.7rem,3vw,2.25rem); letter-spacing:-.04em; }
+.page-heading p { margin:0; color:var(--ink-600); }
+.card { border:1px solid rgba(214,224,230,.85); border-radius:var(--radius); background:var(--surface); box-shadow:0 2px 12px rgba(17,43,65,.035); }
+.button { display:inline-flex; min-height:42px; align-items:center; justify-content:center; gap:8px; padding:0 18px; border:1px solid transparent; border-radius:10px; cursor:pointer; font-weight:700; text-decoration:none; transition:transform 150ms ease,background 150ms ease; }
+.button:hover { transform:translateY(-1px); }.button--primary { background:var(--brand); color:#fff; }.button--secondary { border-color:var(--line); background:#fff; color:var(--ink-800); }
+.eyebrow { color:var(--brand); font-size:.75rem; font-weight:800; letter-spacing:.11em; text-transform:uppercase; }
+.status-pill { display:inline-flex; padding:5px 9px; border-radius:999px; background:#e6f4ed; color:#287254; font-size:.76rem; font-weight:700; }
+.status-pill--inactive { background:#f1f2f3; color:var(--ink-600); }
+@media (max-width:640px) { .page-heading { flex-direction:column; }.page-heading .button { width:100%; } }

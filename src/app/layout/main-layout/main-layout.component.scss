@@ -1,0 +1,1 @@
+.shell{display:flex;min-height:100vh}.shell__main{min-width:0;flex:1;margin-left:260px}.content{width:min(1440px,100%);margin:0 auto;padding:28px 36px 52px}.backdrop{display:none}@media(max-width:900px){.shell__main{margin-left:0}.content{padding:24px 20px 44px}.backdrop{display:block;position:fixed;z-index:30;inset:0;border:0;background:rgba(10,28,42,.42)}}

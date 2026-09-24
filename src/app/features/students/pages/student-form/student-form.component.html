@@ -1,0 +1,9 @@
+<section class="page-heading"><div><p class="eyebrow">Student management</p><h1>{{ title }}</h1><p>{{ studentId ? 'Update the student record and enrollment details.' : 'Create a student profile for the school directory.' }}</p></div></section><form class="form card" [formGroup]="form" (ngSubmit)="submit()"><div class="form__section"><div><p class="eyebrow">01</p><h2>Personal details</h2><p>Basic identity and contact information.</p></div><div class="fields"><label>First name<input formControlName="firstName">@if (submitted && form.controls.firstName.invalid) {
+<small>Required</small>
+}</label><label>Last name<input formControlName="lastName">@if (submitted && form.controls.lastName.invalid) {
+<small>Required</small>
+}</label><label class="wide">Email address<input type="email" formControlName="email">@if (submitted && form.controls.email.invalid) {
+<small>Enter a valid email address</small>
+}</label><label>Date of birth<input type="date" formControlName="dateOfBirth"></label><label>Status<select formControlName="status"><option value="Active">Active</option><option value="Inactive">Inactive</option></select></label></div></div><div class="form__section"><div><p class="eyebrow">02</p><h2>Enrollment</h2><p>Current academic placement.</p></div><div class="fields"><label>Grade<select formControlName="grade">@for (grade of grades; track grade) {
+<option [value]="grade">{{ grade }}</option>
+}</select></label><label>Section<input formControlName="section" maxlength="3"></label></div></div><div class="form__section"><div><p class="eyebrow">03</p><h2>Guardian details</h2><p>Primary family contact.</p></div><div class="fields"><label>Guardian name<input formControlName="guardianName"></label><label>Phone number<input formControlName="guardianPhone"></label></div></div><div class="form__actions"><a class="button button--secondary" routerLink="/students">Cancel</a><button class="button button--primary" type="submit">Save student</button></div></form>
