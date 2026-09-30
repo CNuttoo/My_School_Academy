@@ -1,0 +1,25 @@
+@if (teacher; as current) {
+  <section class="page-heading">
+    <div><p class="eyebrow">Teacher profile</p><h1>{{ current.firstName }} {{ current.lastName }}</h1><p>{{ current.employeeNumber }} · {{ current.department }}</p></div>
+    <a class="button button--secondary" [routerLink]="['edit']">Edit teacher</a>
+  </section>
+  <section class="profile-grid">
+    <article class="card profile">
+      <span class="profile__avatar">{{ initials }}</span><h2>{{ current.firstName }} {{ current.lastName }}</h2><p>{{ current.email }}</p>
+      <span class="status-pill" [class.status-pill--leave]="current.status === 'On leave'" [class.status-pill--inactive]="current.status === 'Inactive'">{{ current.status }}</span>
+    </article>
+    <article class="card details">
+      <div class="details__head"><p class="eyebrow">Faculty information</p><h2>Teacher details</h2></div>
+      <dl>
+        <div><dt>Staff ID</dt><dd>{{ current.employeeNumber }}</dd></div>
+        <div><dt>Join date</dt><dd>{{ current.joinDate }}</dd></div>
+        <div><dt>Department</dt><dd>{{ current.department }}</dd></div>
+        <div><dt>Primary subject</dt><dd>{{ current.primarySubject }}</dd></div>
+        <div><dt>Homeroom</dt><dd>{{ current.homeroom }}</dd></div>
+        <div><dt>Phone</dt><dd>{{ current.phone }}</dd></div>
+      </dl>
+    </article>
+  </section>
+} @else {
+  <section class="card missing"><h1>Teacher not found</h1><p>The requested teacher record does not exist.</p><a class="button button--primary" routerLink="/teachers">Back to teachers</a></section>
+}

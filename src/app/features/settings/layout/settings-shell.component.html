@@ -1,0 +1,1 @@
+<nav class="settings-nav" aria-label="System settings">@for (section of sections; track section.route) { <a [routerLink]="section.route" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: section.exact }">{{ section.label }}</a> }</nav><router-outlet></router-outlet>
