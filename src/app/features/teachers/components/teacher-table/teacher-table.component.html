@@ -1,0 +1,19 @@
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>Teacher</th><th>Staff ID</th><th>Department</th><th>Subject</th><th>Homeroom</th><th>Status</th><th><span class="sr-only">Actions</span></th></tr></thead>
+    <tbody>
+      @for (teacher of teachers; track teacher.id) {
+        <tr>
+          <td><a class="teacher" [routerLink]="[teacher.id]"><span class="avatar">{{ initials(teacher) }}</span><span><strong>{{ teacher.firstName }} {{ teacher.lastName }}</strong><small>{{ teacher.email }}</small></span></a></td>
+          <td>{{ teacher.employeeNumber }}</td>
+          <td>{{ teacher.department }}</td>
+          <td>{{ teacher.primarySubject }}</td>
+          <td>{{ teacher.homeroom }}</td>
+          <td><span class="status-pill" [class.status-pill--leave]="teacher.status === 'On leave'" [class.status-pill--inactive]="teacher.status === 'Inactive'">{{ teacher.status }}</span></td>
+          <td><a class="action" [routerLink]="[teacher.id, 'edit']" aria-label="Edit teacher">•••</a></td>
+        </tr>
+      }
+    </tbody>
+  </table>
+  @if (teachers.length === 0) { <p class="empty">No teachers match your filters.</p> }
+</div>

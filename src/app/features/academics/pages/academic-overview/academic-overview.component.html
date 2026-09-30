@@ -1,0 +1,13 @@
+<section class="page-heading"><div><p class="eyebrow">Academic management</p><h1>Academic overview</h1><p>Plan classes, subjects, curricula, and weekly learning schedules.</p></div><a class="button button--primary" routerLink="timetable">View timetable</a></section>
+<section class="stats">
+  <article class="card stat"><span>Active classrooms</span><strong>{{ activeClassrooms() }}</strong><small>{{ enrolledStudents() }} students assigned</small></article>
+  <article class="card stat"><span>Active subjects</span><strong>{{ activeSubjects() }}</strong><small>Across 6 departments</small></article>
+  <article class="card stat"><span>Curriculum plans</span><strong>{{ academicService.curricula().length }}</strong><small>{{ activeCurricula() }} published</small></article>
+  <article class="card stat"><span>Scheduled lessons</span><strong>{{ academicService.schedule().length }}</strong><small>Current mock week</small></article>
+</section>
+<section class="modules">
+  <a class="card module" routerLink="classrooms"><span class="module__icon">CL</span><div><h2>Classrooms</h2><p>Organize class groups, rooms, capacity, and homeroom teachers.</p></div><b>→</b></a>
+  <a class="card module" routerLink="subjects"><span class="module__icon">SB</span><div><h2>Subjects</h2><p>Maintain subject codes, departments, teachers, and weekly periods.</p></div><b>→</b></a>
+  <a class="card module" routerLink="curriculum"><span class="module__icon">CU</span><div><h2>Curriculum</h2><p>Track active academic programs and curriculum readiness.</p></div><b>→</b></a>
+  <a class="card module" routerLink="timetable"><span class="module__icon">TT</span><div><h2>Timetable</h2><p>Review and add weekly lessons by class and weekday.</p></div><b>→</b></a>
+</section>

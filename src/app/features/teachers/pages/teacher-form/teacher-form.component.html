@@ -1,0 +1,30 @@
+<section class="page-heading">
+  <div><p class="eyebrow">Teacher management</p><h1>{{ title }}</h1><p>{{ teacherId ? 'Update the faculty profile and teaching assignment.' : 'Create a faculty profile for the school directory.' }}</p></div>
+</section>
+<form class="form card" [formGroup]="form" (ngSubmit)="submit()">
+  <div class="form__section">
+    <div><p class="eyebrow">01</p><h2>Personal details</h2><p>Identity and contact information for the teacher.</p></div>
+    <div class="fields">
+      <label>First name<input formControlName="firstName">@if (submitted && form.controls.firstName.invalid) { <small>Required</small> }</label>
+      <label>Last name<input formControlName="lastName">@if (submitted && form.controls.lastName.invalid) { <small>Required</small> }</label>
+      <label>Email address<input type="email" formControlName="email">@if (submitted && form.controls.email.invalid) { <small>Enter a valid email address</small> }</label>
+      <label>Phone number<input type="tel" formControlName="phone">@if (submitted && form.controls.phone.invalid) { <small>Required</small> }</label>
+    </div>
+  </div>
+  <div class="form__section">
+    <div><p class="eyebrow">02</p><h2>Teaching assignment</h2><p>Department, main subject, and homeroom responsibility.</p></div>
+    <div class="fields">
+      <label>Department<select formControlName="department">@for (department of departments; track department) { <option [value]="department">{{ department }}</option> }</select></label>
+      <label>Primary subject<input formControlName="primarySubject">@if (submitted && form.controls.primarySubject.invalid) { <small>Required</small> }</label>
+      <label>Homeroom<input formControlName="homeroom" placeholder="e.g. Grade 10A or Not assigned"></label>
+    </div>
+  </div>
+  <div class="form__section">
+    <div><p class="eyebrow">03</p><h2>Employment</h2><p>Start date and current availability.</p></div>
+    <div class="fields">
+      <label>Join date<input type="date" formControlName="joinDate">@if (submitted && form.controls.joinDate.invalid) { <small>Required</small> }</label>
+      <label>Status<select formControlName="status"><option value="Active">Active</option><option value="On leave">On leave</option><option value="Inactive">Inactive</option></select></label>
+    </div>
+  </div>
+  <div class="form__actions"><a class="button button--secondary" routerLink="/teachers">Cancel</a><button class="button button--primary" type="submit">Save teacher</button></div>
+</form>

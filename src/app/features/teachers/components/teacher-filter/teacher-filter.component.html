@@ -1,0 +1,16 @@
+<div class="filters">
+  <label class="search">
+    <span aria-hidden="true">⌕</span>
+    <input type="search" [(ngModel)]="query" placeholder="Search teachers…" aria-label="Search teachers" (ngModelChange)="emitFilter()">
+  </label>
+  <select [(ngModel)]="department" aria-label="Filter by department" (ngModelChange)="emitFilter()">
+    <option value="All">All departments</option>
+    @for (item of departments; track item) { <option [value]="item">{{ item }}</option> }
+  </select>
+  <select [(ngModel)]="status" aria-label="Filter by status" (ngModelChange)="emitFilter()">
+    <option value="All">All statuses</option>
+    <option value="Active">Active</option>
+    <option value="On leave">On leave</option>
+    <option value="Inactive">Inactive</option>
+  </select>
+</div>

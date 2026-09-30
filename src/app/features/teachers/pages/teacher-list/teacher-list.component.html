@@ -1,0 +1,8 @@
+<section class="page-heading">
+  <div><p class="eyebrow">Teacher management</p><h1>Teachers</h1><p>Manage faculty profiles, teaching assignments, and homerooms.</p></div>
+  <a class="button button--primary" routerLink="new">+ Add teacher</a>
+</section>
+<section class="card list">
+  <div class="list__toolbar"><div><h2>Faculty directory</h2><p>{{ teachers().length }} teacher records shown</p></div><app-teacher-filter [departments]="departments()" (filterChange)="updateFilter($event)"></app-teacher-filter></div>
+  <app-teacher-table [teachers]="teachers()"></app-teacher-table>
+</section>

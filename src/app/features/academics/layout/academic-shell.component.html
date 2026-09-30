@@ -1,0 +1,6 @@
+<nav class="academic-nav" aria-label="Academic management">
+  @for (section of sections; track section.route) {
+    <a [routerLink]="section.route" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: section.exact }">{{ section.label }}</a>
+  }
+</nav>
+<router-outlet></router-outlet>
